@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart cartQuantity</title>
+</head>
+
+<body>
+    <h1>cart cartQuantity</h1>
+
+    <button type="button" onclick="console.log(`cartQuantity = ${cartQuantity}`)">show cartQuantity</button>
+
+    <button type="button" onclick="cartQuantity+=1; console.log('success +1')">add to chart</button>
+
+    <button type="button" onclick="cartQuantity+=2; console.log('success +2')">+2</button>
+
+    <button type="button" onclick="cartQuantity+=3; console.log('success +3')">+3</button>
+
+    <button type="button" onclick="cartQuantity=0; console.log('success: reset')">reset cart</button>
+    <script>
+        let cartQuantity = 0;
+    </script>
+</body>
+
+</html>

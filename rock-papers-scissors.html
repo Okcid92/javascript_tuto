@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean</title>
+</head>
+
+<body>
+    <p>rock paper scissors</p>
+    <button onclick="
+    userchoice = 'rock';
+    randnumb = Math.random();
+    cmpchoise();
+    // if (randnumb >= 0 && randnumb < 1/3){ 
+    //     iachoice = 'rock'
+    // } else if (randnumb >= 1/3 && randnumb < 2/3){
+    //     iachoice = 'paper'
+    // } else if (randnumb >= 2/3 && randnumb < 1){
+    //     iachoice = 'scissors'
+    // };
+    console.log(iachoice);
+    if (userchoice === iachoice){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+    }else if(iachoice === 'paper'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+    }else if(iachoice === 'scissors'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won`)
+    }
+    ">rock</button>
+
+    <button onclick="
+    userchoice = 'paper';
+    // randnumb = Math.random();
+    // if (randnumb > 0 && randnumb < 1/3){
+    //     iachoice = 'rock'
+    // } else if (randnumb >= 1/3 && randnumb < 2/3){
+    //     iachoice = 'paper'
+    // } else if (randnumb >= 2/3 && randnumb < 1){
+    //     iachoice = 'scissors'
+    // };
+    cmpchoise();
+    console.log(iachoice)
+    if (userchoice === iachoice){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+    }else if(iachoice === 'rock'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+    }else if(iachoice === 'scissors'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+    }
+    ">paper</button>
+
+    <button onclick="
+    userchoice = 'scissors';
+    cmpchoise();
+    // randnumb = Math.random();
+    // if (randnumb > 0 && randnumb < 1/3){
+    //     iachoice = 'rock'
+    // } else if (randnumb >= 1/3 && randnumb < 2/3){
+    //     iachoice = 'paper'
+    // } else if (randnumb >= 2/3 && randnumb < 1){
+    //     iachoice = 'scissors'
+    // };
+    console.log(iachoice)
+    if (userchoice === iachoice){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+    }else if(iachoice === 'paper'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won`)
+    }else if(iachoice === 'rock'){
+        window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+    }
+    ">scissors</button>
+
+    <script>
+        function cmpchoise() {
+            randnumb = Math.random();
+            if (randnumb >= 0 && randnumb < 1 / 3) {
+                iachoice = 'rock'
+            } else if (randnumb >= 1 / 3 && randnumb < 2 / 3) {
+                iachoice = 'paper'
+            } else if (randnumb >= 2 / 3 && randnumb < 1) {
+                iachoice = 'scissors'
+            };
+        }
+    </script>
+</body>
+
+</html>

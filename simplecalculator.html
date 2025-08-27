@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+</head>
+
+<body>
+    <button onclick="console.log(1); result+= '1'">1</button>
+    <button onclick="console.log(2); result+= '2'">2</button>
+    <button onclick="console.log(3); result+= '3'">3</button><br>
+    <button onclick="console.log(4); result+= '4'">4</button>
+    <button onclick="console.log(5); result+= '5'">5</button>
+    <button onclick="console.log(6); result+= '6'">6</button><br>
+    <button onclick="console.log(7); result+= '7'">7</button>
+    <button onclick="console.log(8); result+= '8'">8</button>
+    <button onclick="console.log(9); result+= '9'">9</button><br>
+    <button onclick="console.log('+'); result+= ' + '">+</button>
+    <button onclick="console.log('-'); result+= ' - '">-</button>
+    <button onclick="console.log('/'); result+= ' / '">/</button> <br>
+    <button onclick="console.log('*'); result+= ' * '">*</button>
+    <button onclick="result = eval(result); console.log(`result = ${result}`); result=0;">=</button>
+
+    <script>
+        let result= 0;
+    </script>
+</body>
+
+</html>
