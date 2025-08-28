@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom calculator</title>
+    <link rel="stylesheet" href="/style/calculator.css">
+</head>
+
+<body>
+    <p class="js-display-taping"></p>
+    <div class="numbPad">
+        <p>
+            <button onclick="result+='1'; display();">1</button>
+            <button onclick="result+='2'; display();">2</button>
+            <button onclick="result+='3'; display();">3</button>
+            <button class="operator" onclick="result+=' + '; display();">+</button>
+        </p>
+        <p>
+            <button onclick="result+='4'; display();">4</button>
+            <button onclick="result+='5'; display();">5</button>
+            <button onclick="result+='6'; display();">6</button>
+            <button class="operator" onclick="result+=' - '; display();">-</button>
+        </p>
+        <p>
+            <button onclick="result+='7'; display();">7</button>
+            <button onclick="result+='8'; display();">8</button>
+            <button onclick="result+='9'; display();">9</button>
+            <button class="operator" onclick="result+=' * '; display();">*</button>
+        </p>
+        <p>
+            <button onclick="result+='0'; display();">0</button>
+            <button onclick="result+=' . '; display();">.</button>
+            <button onclick="result+=' / '; display();">/</button>
+            <button class="operator" onclick="showReusult();">=</button>
+        </p>
+    </div>
+
+
+    <script src="/script/calculator.js"></script>
+
+</body>
+
+</html>

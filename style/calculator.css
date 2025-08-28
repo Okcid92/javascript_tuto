@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(25, 25, 25);
+}
+.numbPad {
+  margin-top: 10px;
+}
+
+button {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: grey;
+  color: white;
+}
+
+.operator {
+  background-color: orange;
+  border: none;
+}
+
+.js-display-taping {
+  font-size: 50px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}

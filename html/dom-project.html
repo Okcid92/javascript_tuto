@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dom project</title>
     <style>
-        .subscribe-button{
+        .subscribe-button {
             border: none;
             background-color: black;
             color: white;
@@ -14,20 +14,24 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            margin-bottom: 30px;            
+            margin-bottom: 30px;
         }
-        .subscribed{
+
+        .subscribed {
             background-color: rgb(240, 240, 240);
             color: rgb(0, 0, 0);
         }
-        body{
+
+        body {
             font-family: Arial;
         }
-        .cost-input{
+
+        .cost-input {
             font-size: 15px;
             padding: 10px;
         }
-        .calculate-button{
+
+        .calculate-button {
             padding: 12px 15px;
             background-color: green;
             color: white;
@@ -46,10 +50,7 @@
     <a href="/rockPaperScissorsForDom.html">click here</a>
 
     <p>amason shipping calculator <br>order under $40 = + $10 shipping <br>order over $40 = FREE SHIPPING</p>
-    <input 
-    placeholder="cost of order " 
-    class="js-cost-input cost-input" 
-    onkeydown=" HandleCostKeyDown() "> 
+    <input placeholder="cost of order " class="js-cost-input cost-input" onkeydown=" HandleCostKeyDown() ">
     <button class="calculate-button" onclick="
     calculateTotal();
     ">calculate</button> <br>
