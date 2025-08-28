@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom calculator</title>
+</head>
+
+<body>
+    <p class="js-display-taping"></p>
+    <input class="js-input-section" placeholder="enter calcul"
+    onkeydown="HandleCostKeyDown()"> <br>
+    <button onclick="result+='1'; display();">1</button>
+    <button onclick="result+='2'; display();">2</button>
+    <button onclick="result+='3'; display();">3</button> <br>
+    <button onclick="result+='4'; display();">4</button>
+    <button onclick="result+='5'; display();">5</button>
+    <button onclick="result+='6'; display();">6</button> <br>
+    <button onclick="result+='7'; display();">7</button>
+    <button onclick="result+='8'; display();">8</button>
+    <button onclick="result+='9'; display();">9</button> <br>
+    <button onclick="result+=' + '; display();">+</button>
+    <button onclick="result+=' - '; display();">-</button>
+    <button onclick="result+=' / '; display();">/</button> <br>
+    <button onclick="result+=' * '; display();">*</button>
+    <button onclick="showReusult();">=</button>
+
+
+
+
+    <script>
+        let result = '';
+        function display() {
+            document.querySelector('.js-display-taping')
+                .innerHTML = `${result}`
+        }
+        function showReusult(){
+            result+= ' = '+eval(result); 
+            display(); 
+            result ='';
+        }
+        function HandleCostKeyDown() {
+            if (event.key === 'Enter') {
+                showReusult();
+            }
+        }
+        function calcul (){
+            HandleCostKeyDown();
+            result = eval(document.querySelector('.js-input-section'))
+
+        }
+
+    </script>
+</body>
+
+</html>
