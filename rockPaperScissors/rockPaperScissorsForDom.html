@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p class="title">rock paper scissors</p>
+    <button onclick="
+    playgame('✊');
+    " class="move-icon">✊</button>
+
+    <button onclick="
+    playgame('🖐');
+    " class="move-icon">🖐</button>
+
+    <button onclick="
+    playgame('✌️');
+    " class="move-icon">✌️</button>
+
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button onclick=" 
+        score.wins = 0; 
+        score.tie = 0; 
+        score.losses = 0;
+        updatescore()
+        " class="reset-icon">
+        reset score🔁</button>
+
+<script src="script.js"></script>
+</body>
+
+</html>
