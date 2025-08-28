@@ -76,39 +76,67 @@
     // }
     ">scissors</button>
 
+    <button onclick=" score.wins = 0; score.tie = 0; score.losses = 0; alert(`success`)"> reset score</button>
+
     <script>
+
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            tie: 0,
+            losses: 0
+        };
+
         function playgame(userchoice) {
             cmpchoise()
             console.log(`ia choice: ${iachoice}`);
             if (userchoice === "scissors") {
                 if (userchoice === iachoice) {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+                    score.tie += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won 
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'paper') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won`)
+                    score.wins += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'rock') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+                    score.losses += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 }
             } else if (userchoice === "paper") {
                 if (userchoice === iachoice) {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+                    score.tie += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'rock') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+                    score.wins += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'scissors') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+                    score.losses += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 }
 
             } else if (userchoice === "rock") {
                 if (userchoice === iachoice) {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won`)
+                    score.tie += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so nobody won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'paper') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won`)
+                    score.losses += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so ia won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 } else if (iachoice === 'scissors') {
-                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won`)
+                    score.wins += 1;
+                    window.alert(`ia choice = ${iachoice} and your choice = ${userchoice} so you won
+                    and the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`)
                 }
             }
 
+        localStorage.setItem('score', JSON.stringify(score));
 
-        }
+        };
 
         function cmpchoise() {
             randnumb = Math.random();
@@ -119,7 +147,9 @@
             } else if (randnumb >= 2 / 3 && randnumb < 1) {
                 iachoice = 'scissors'
             };
-        }
+        };
+
+
     </script>
 </body>
 
