@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="
+        userChoice = 'pile';
+        myturn();">pile</button>
+    <button onclick="
+        userChoice = 'face';
+        myturn();">face</button>
+    <button onclick="
+    score.wins=0;
+    score.losses=0;
+    ">reset</button>
+</body>
+<script>
+
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+    }
+
+    function destin() {
+        let destNum = Math.random()
+        if (destNum >= 0 && destNum <= 1 / 2) choixDestin = "pile"
+        else if (destNum > 1 / 2 && destNum <= 1) choixDestin = "face"
+    }
+
+    function myturn() {
+        destin();
+        if (choixDestin === userChoice) {
+            score.wins += 1;
+            console.log('you win');
+            alert(`your choice = ${userChoice} and the answer is ${choixDestin} 
+            you won your score is wins = ${score.wins} losses = ${score.losses}`);
+        }
+        else if (!(choixDestin === userChoice)) {
+            score.losses += 1;
+            console.log('you lose');
+            alert(`your choice = ${userChoice} and the answer is ${choixDestin} 
+            you losses your score is wins = ${score.wins} losses = ${score.losses}`);
+
+        }
+        localStorage.setItem('score', JSON.stringify(score))
+
+    }
+</script>
+
+</html>
