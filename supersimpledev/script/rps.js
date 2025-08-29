@@ -60,10 +60,40 @@ function cmpchoise() {
   } else if (randnumb >= 2 / 3 && randnumb < 1) {
     iachoice = "✌️";
   }
+  return iachoice;
 }
 
 function updatescore() {
   document.querySelector(
     ".js-score"
   ).innerHTML = `the score is wins = ${score.wins} losses = ${score.losses} tie = ${score.tie}`;
+}
+
+let isAutoplaying = false;
+let intervaID;
+
+function autoplay() {
+  if (!isAutoplaying) {
+    intervaID = setInterval( () => {
+      const playermove = cmpchoise();
+      playgame(playermove);
+      updatescore();
+    }, 100);
+    isAutoplaying = true;
+  } else {
+    clearInterval(intervaID);
+    isAutoplaying = false;
+  }
+}
+
+function apbutton() {
+  const buttonElement = document.querySelector(".auto-play");
+
+  if (buttonElement.innerText === "Auto Play") {
+    buttonElement.innerHTML = "Stop Auto Play";
+    buttonElement.classList.add("StopAutoPlay");
+  } else {
+    buttonElement.innerHTML = "Auto Play";
+    buttonElement.classList.remove("StopAutoPlay");
+  }
 }

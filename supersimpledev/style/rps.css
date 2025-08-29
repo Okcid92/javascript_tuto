@@ -35,7 +35,8 @@ body {
   font-weight: bold;
 }
 
-.reset-icon {
+.reset-icon,
+.auto-play {
   font-size: 25px;
   font-weight: bold;
   border-radius: 20px;
@@ -47,4 +48,14 @@ body {
 .reset-icon:hover {
   background-color: rgb(255, 0, 0);
   color: white;
+}
+
+.StopAutoPlay {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: darkred;
+  cursor: pointer;
 }
