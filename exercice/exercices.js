@@ -301,62 +301,62 @@
 // Afficher toutes les tâches
 // (Concepts : arrays, fonctions, menus CLI, boucles)
 
-let listTasks = [];
+// let listTasks = [];
 
-function ask(question) {
-  const readline = require("readline");
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      rl.close();
-      resolve(answer);
-    });
-  });
-}
+// function ask(question) {
+//   const readline = require("readline");
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+//   return new Promise((resolve) => {
+//     rl.question(question, (answer) => {
+//       rl.close();
+//       resolve(answer);
+//     });
+//   });
+// }
 
-async function addTasks() {
-  let task = await ask("enter your new task: ");
-  listTasks.push(task);
-}
+// async function addTasks() {
+//   let task = await ask("enter your new task: ");
+//   listTasks.push(task);
+// }
 
-async function deleteTasks() {
-  console.log(listTasks);
-  let del = await ask("enter task you want to delete: ");
-  listTasks.includes(del)
-    ? listTasks.splice(listTasks.indexOf(del), 1)
-    : "introuvable";
-}
+// async function deleteTasks() {
+//   console.log(listTasks);
+//   let del = await ask("enter task you want to delete: ");
+//   listTasks.includes(del)
+//     ? listTasks.splice(listTasks.indexOf(del), 1)
+//     : "introuvable";
+// }
 
-async function affiche() {
-  for (let index = 0; index < listTasks.length; index++) {
-    console.log(`${index} -> ${listTasks[index]}\n`);
-  }
-}
+// async function affiche() {
+//   for (let index = 0; index < listTasks.length; index++) {
+//     console.log(`${index} -> ${listTasks[index]}\n`);
+//   }
+// }
 
-(async () => {
-  while (true) {
-    let choice = await ask("1.add\n2.delete\n3.show all\n4.exit\nchoice: ");
-    if (choice.toLowerCase() === "exit" || choice === "4") {
-      console.log("Bye !");
-      return; // quitte la boucle
-    }
-    choice = Number(choice); // convertit si nécessaire
+// (async () => {
+//   while (true) {
+//     let choice = await ask("1.add\n2.delete\n3.show all\n4.exit\nchoice: ");
+//     if (choice.toLowerCase() === "exit" || choice === "4") {
+//       console.log("Bye !");
+//       return; // quitte la boucle
+//     }
+//     choice = Number(choice); // convertit si nécessaire
 
-    switch (choice) {
-      case 1:
-        await addTasks();
-        break;
-      case 2:
-        await deleteTasks();
-        break;
-      case 3:
-        await affiche();
-        break;
-      default:
-        console.log("Choix invalide");
-    }
-  }
-})();
+//     switch (choice) {
+//       case 1:
+//         await addTasks();
+//         break;
+//       case 2:
+//         await deleteTasks();
+//         break;
+//       case 3:
+//         await affiche();
+//         break;
+//       default:
+//         console.log("Choix invalide");
+//     }
+//   }
+// })();
