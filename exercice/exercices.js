@@ -209,33 +209,154 @@
 // Le programme lui dit si son nombre est trop grand ou trop petit jusqu’à ce qu’il trouve.
 // (Concepts : Math.random, boucle while, conditions)
 
-const readline = require("readline");
+// const readline = require("readline");
 
-const nmbrToDevine = Math.floor(Math.random() * 10) + 1;
+// const nmbrToDevine = Math.floor(Math.random() * 10) + 1;
 
-function deviner() {
+// function deviner() {
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+
+//   rl.question("Entrer votre choix: ", (choix) => {
+//     const a = Number(choix);
+
+//     if (a < nmbrToDevine) {
+//       console.log("Plus grand !");
+//       rl.close();
+//       deviner(); // relance la fonction si pas encore trouvé
+//     } else if (a > nmbrToDevine) {
+//       console.log("Plus petit !");
+//       rl.close();
+//       deviner(); // relance
+//     } else {
+//       console.log("Bravo ! Vous avez deviné !");
+//       rl.close(); // fin du jeu
+//     }
+//   });
+// }
+
+// deviner();
+
+// const readline = require("readline");
+
+// function ask(question) {
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+//   return new Promise((resolve) =>
+//     rl.question(question, (answer) => {
+//       rl.close();
+//       resolve(answer);
+//     })
+//   );
+// }
+
+// (async () => {
+//   const nmbrToDevine = Math.floor(Math.random() * 10) + 1;
+//   let a = null;
+
+//   while (a !== nmbrToDevine) {
+//     a = Number(await ask("Devinez le nombre (1-10) : "));
+
+//     if (a < nmbrToDevine) console.log("Plus grand !");
+//     else if (a > nmbrToDevine) console.log("Plus petit !");
+//     else console.log("Bravo ! Vous avez deviné !");
+//   }
+// })();
+
+// const readline = require("readline");
+
+// function ask(question) {
+//   const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+//   });
+//   return new Promise((resolve) => {
+//     rl.question(question, (answer) => {
+//       rl.close();
+//       resolve(answer);
+//     });
+//   });
+// }
+
+// (async () => {
+//   let score = Number(0);
+
+//   let rp1 = await ask("la capitale du burkina faso?: ");
+//   if (rp1 && rp1.toLowerCase() === "ouagadougou") score++;
+//   let rp2 = await ask("la capitale du mali?: ");
+//   if (rp2 && rp2.toLowerCase() === "bamako" ) score++;
+//   let rp3 = await ask("la capitale du niger?: ");
+//   if (rp3 && rp3.toLowerCase() === "niamey") score++;
+//   console.log(score);
+// })();
+
+// exercice 10 Gestion d’une To-Do List
+// 👉 Crée un tableau vide. L’utilisateur peut :
+// Ajouter une tâche
+// Supprimer une tâche
+// Afficher toutes les tâches
+// (Concepts : arrays, fonctions, menus CLI, boucles)
+
+let listTasks = [];
+
+function ask(question) {
+  const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-
-  rl.question("Entrer votre choix: ", (choix) => {
-    const a = Number(choix);
-
-    if (a < nmbrToDevine) {
-      console.log("Plus grand !");
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
       rl.close();
-      deviner(); // relance la fonction si pas encore trouvé
-    } else if (a > nmbrToDevine) {
-      console.log("Plus petit !");
-      rl.close();
-      deviner(); // relance
-    } else {
-      console.log("Bravo ! Vous avez deviné !");
-      rl.close(); // fin du jeu
-    }
+      resolve(answer);
+    });
   });
 }
 
-deviner();
+async function addTasks() {
+  let task = await ask("enter your new task: ");
+  listTasks.push(task);
+}
 
+async function deleteTasks() {
+  console.log(listTasks);
+  let del = await ask("enter task you want to delete: ");
+  listTasks.includes(del)
+    ? listTasks.splice(listTasks.indexOf(del), 1)
+    : "introuvable";
+}
+
+async function affiche() {
+  for (let index = 0; index < listTasks.length; index++) {
+    console.log(`${index} -> ${listTasks[index]}\n`);
+  }
+}
+
+(async () => {
+  while (true) {
+    let choice = await ask("1.add\n2.delete\n3.show all\n4.exit\nchoice: ");
+    if (choice.toLowerCase() === "exit" || choice === "4") {
+      console.log("Bye !");
+      return; // quitte la boucle
+    }
+    choice = Number(choice); // convertit si nécessaire
+
+    switch (choice) {
+      case 1:
+        await addTasks();
+        break;
+      case 2:
+        await deleteTasks();
+        break;
+      case 3:
+        await affiche();
+        break;
+      default:
+        console.log("Choix invalide");
+    }
+  }
+})();
