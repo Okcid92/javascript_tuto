@@ -1,0 +1,23 @@
+{
+  "name": "javascript_tuto_fcc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Okcid92/javascript_tuto_brocode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Okcid92/javascript_tuto_brocode/issues"
+  },
+  "homepage": "https://github.com/Okcid92/javascript_tuto_brocode#readme",
+  "dependencies": {
+    "argv": "^0.0.3",
+    "minimist": "^1.2.8"
+  }
+}
