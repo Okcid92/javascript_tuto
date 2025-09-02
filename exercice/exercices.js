@@ -167,3 +167,75 @@
 
 // 👉 Demande 2 nombres + une opération (+, -, *, /) et affiche le résultat.
 // (Concepts : switch/case, fonctions, opérateurs mathématiques)
+
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+
+// rl.question("enter the first one: ", (num1) => {
+//   rl.question("enter the operator: ", (op) => {
+//     rl.question("enter the second one: ", (num2) => {
+//       rl.close();
+//       let a = Number(num1);
+//       let b = Number(num2);
+//       let result;
+//       switch (op) {
+//         case "+":
+//           result = a + b;
+//           break;
+//         case "-":
+//           result = a - b;
+//           break;
+//         case "*":
+//           result = a * b;
+//           break;
+//         case "/":
+//           result = b === 0 ? "invalid: b < 0 !!!" : a / b;
+//           break;
+//         default:
+//           console.log("invalid op");
+//           break;
+//       }
+//       console.log(`result = ${result}`);
+//     });
+//   });
+// });
+
+// exercice 9 Jeu du Nombre Secret 🎲
+
+// 👉 Génère un nombre aléatoire entre 1 et 10. L’utilisateur doit le deviner.
+// Le programme lui dit si son nombre est trop grand ou trop petit jusqu’à ce qu’il trouve.
+// (Concepts : Math.random, boucle while, conditions)
+
+const readline = require("readline");
+
+const nmbrToDevine = Math.floor(Math.random() * 10) + 1;
+
+function deviner() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  rl.question("Entrer votre choix: ", (choix) => {
+    const a = Number(choix);
+
+    if (a < nmbrToDevine) {
+      console.log("Plus grand !");
+      rl.close();
+      deviner(); // relance la fonction si pas encore trouvé
+    } else if (a > nmbrToDevine) {
+      console.log("Plus petit !");
+      rl.close();
+      deviner(); // relance
+    } else {
+      console.log("Bravo ! Vous avez deviné !");
+      rl.close(); // fin du jeu
+    }
+  });
+}
+
+deviner();
+
